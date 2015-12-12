@@ -21,7 +21,7 @@ int main(int argc, char** argv)
 
     while(factor < num)
     {
-        if (num % factor == 0)
+        if(num % factor == 0)
         {
             num /= factor;
         }
