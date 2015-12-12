@@ -8,10 +8,10 @@ Date: December 11 2015*/
 
 /*
 NOTES
-When using the % operator, in the case x % n where n is a constant, the compiler 
+When using the % operator, in the case a % x where x is a constant, the compiler 
 will typically use its fastest available algorithm to determine divisiblity where 
-as if n is a variable, this means division is inevitable. In this problem we have constants,
-however that being said, arithmetic series were used instead becuase they give a O(1) result instead of O(n).
+as if x is a variable division is inevitable. In this problem we have constants,
+however arithmetic series were used instead becuase they give a O(1) result instead of O(n).
 */
 
 #include <iostream>
