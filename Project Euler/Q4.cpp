@@ -11,22 +11,22 @@ Date: December 12 2015*/
 NOTES
 Start from the highest products and work back until the first palindrome is found.
 The following products are in a decending order:
-n * n =             n^2
-(n - 1) * n =       n^2 - n
+n * n             = n^2
+(n - 1) * n       = n^2 - n
 (n - 1) * (n - 1) = n^2 - 2n + 1
-(n - 2) * n =       n^2 - 2n
+(n - 2) * n =     = n^2 - 2n
 (n - 2) * (n - 1) = n^2 - 3n + 2
-(n - 3) * n =       n^2 - 3n
+(n - 3) * n       = n^2 - 3n
 (n - 2) * (n - 2) = n^2 - 4n + 4
 (n - 3) * (n - 1) = n^2 - 4n + 3 
-(n - 4) * n =       n^2 - 4n
+(n - 4) * n       = n^2 - 4n
 (n - 3) * (n - 2) = n^2 - 5n + 6
 (n - 4) * (n - 1) = n^2 - 5n + 4
-(n - 5) * n =       n^2 - 5n
+(n - 5) * n       = n^2 - 5n
 
 Looking at the linear terms you get the following:
 
-coefficient       sum of
+coefficient       sum of (in order of how they appear above)
 ****************************************
 0                   0 + 0
 1                   1 + 0
@@ -35,7 +35,7 @@ coefficient       sum of
 4                   2 + 2, 3 + 1, 4 + 0
 5                   3 + 2, 4 + 1, 5 + 0
 
-For each n, the first pair of operands start at ceiling(n/2) and  floor(n/2) respectively while the first term
+For each coefficient, the first pair of operands start at ceiling(n/2) and floor(n/2) respectively while the first operand
 is increment and the second is decremented in each subsequent pair.
 */
 
