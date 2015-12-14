@@ -19,14 +19,9 @@ Consider the numbers 1 to 8
 7 is prime so multiply by 7
 8 is not prime. It can be broken down into 2 * 4. Since the product is now divisible by 4, only multiply by 2.
 
-The trick to the algorithm is that whenever a new non-prime number x is found (that is not already a factor of the current product),
+The trick to the algorithm is that whenever a new number x is found that is not already a factor of the current product,
 it is guaranteed that the product only needs to be multiplied by a SINGLE prime factor of x to make the product now divisible 
 by x.
-
-When checking if some number n is prime, you only need to check all multiples up to its
-square root. This is because if n is not prime, then it has some factors a and b. If a and b were both
-greater than the square root of n, then a * b would be greater than n. This means at least one
-of the factors is <= n.
 */
 
 #include <iostream>
@@ -38,32 +33,14 @@ int main(int argc, char** argv)
     const int n = 20;
     long prod = 1;
 
-    std::array<bool, n + 1> isPrime;
-    isPrime.fill(true);
-
-    int root = std::sqrt(n); //floored root
-
-    // find prime factors
-    for (int i = 2; i <= root; ++i)
+    for(int i = 2; i < n; ++i)
     {
-        for (int x = 2 * i; x <= n; x += i)
-        {
-            isPrime[x] = false;
-        }
-    }
-
-    for (int i = 2; i < n; ++i)
-    {
-        if(isPrime[i])
-        {
-            prod *= i;
-        }
-        else if(prod % i)
+        if(prod % i)
         {
             int x = i;
-            for (int j = 2; j < i; ++j)
+            for(int j = 2; j; ++j)
             {
-                if (!(x % j))
+                if(!(x % j))
                 {
                     x /= j;
                     prod *= j;
