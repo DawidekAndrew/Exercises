@@ -50,7 +50,7 @@ int main(int argc, char** argv)
                             "71636269561882670428252483600823257530420752963450";
 
 
-    const  size_t numDigits = n.length();
+    const size_t numDigits = n.length();
     const size_t numMult = 13;
     size_t zeroIdx = -1;
 
@@ -75,25 +75,25 @@ int main(int argc, char** argv)
         bestProduct = currProduct;
     }
 
-    for (size_t i = numMult; i < numDigits; ++i)
+    for(size_t i = numMult; i < numDigits; ++i)
     {
         divisor = n[i - numMult] - '0';
         multiplicand = n[i] - '0';
-        if (!multiplicand)
+        if(!multiplicand)
         {
             zeroIdx = i;
             currProduct = 0;
             continue;
         }
 
-        if (divisor && zeroIdx < (i - numMult))
+        if(divisor && zeroIdx < (i - numMult))
         {
             currProduct /= divisor;
         }
         
         currProduct ? currProduct *= multiplicand : currProduct = multiplicand;
 
-        if (currProduct > bestProduct && zeroIdx <= (i - numMult))
+        if(currProduct > bestProduct && zeroIdx <= (i - numMult))
         {
             bestProduct = currProduct;
         }
