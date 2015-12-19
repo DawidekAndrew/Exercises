@@ -23,8 +23,8 @@ n^2             = 2na + 2nb - 2ab
 b               = (((n^2) / 2) - na) / (n - a)
 
 This substitution and isolation changes the probem from O(n^2) to O(n) 
-since given 'a', 'b' can be solved in constant time (and avoids having
-to solve square roots).
+since given 'a', 'b' and 'c' can be solved in constant time. The solution
+also avoids having to compute square roots.
 
 Don't need to check a or b == 0 since a, b and c must all be unique
 */
